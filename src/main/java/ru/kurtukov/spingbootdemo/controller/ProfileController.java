@@ -1,5 +1,6 @@
 package ru.kurtukov.spingbootdemo.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.kurtukov.spingbootdemo.profile.SystemProfile;
@@ -13,6 +14,7 @@ public class ProfileController {
         this.profile = profile;
     }
 
+    @GetMapping("profile")
     public String getProfile() {
         return profile.getProfile();
     }

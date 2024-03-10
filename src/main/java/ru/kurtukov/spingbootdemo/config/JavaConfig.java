@@ -2,10 +2,12 @@ package ru.kurtukov.spingbootdemo.config;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import ru.kurtukov.spingbootdemo.profile.DevProfile;
 import ru.kurtukov.spingbootdemo.profile.SystemProfile;
 import ru.kurtukov.spingbootdemo.profile.ProductionProfile;
 
+@Configuration
 public class JavaConfig {
     @Bean
     @ConditionalOnProperty(prefix = "netology.profile", name = "dev", havingValue = "true", matchIfMissing = true)

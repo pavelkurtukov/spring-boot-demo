@@ -4,18 +4,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.kurtukov.spingbootdemo.profile.SystemProfile;
 
+@RestController
+@RequestMapping("/")
 public class ProfileController {
-    @RestController
-    @RequestMapping("/")
-    public class ProfileController {
-        private SystemProfile profile;
+    private SystemProfile profile;
 
-        public ProfileController(SystemProfile profile) {
-            this.profile = profile;
-        }
+    public ProfileController(SystemProfile profile) {
+        this.profile = profile;
+    }
 
-        public String getProfile() {
-            return profile.getProfile();
-        }
+    public String getProfile() {
+        return profile.getProfile();
     }
 }
